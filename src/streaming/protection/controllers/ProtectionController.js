@@ -872,7 +872,7 @@ function ProtectionController(config) {
             sessionId: request.sessionId
         });
 
-        xhr.send(request.data);
+        xhr.send(JSON.stringify(request.data));
     }
 
     function onNeedKey(event, retry) {
