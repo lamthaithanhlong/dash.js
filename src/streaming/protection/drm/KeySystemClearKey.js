@@ -101,7 +101,7 @@ function KeySystemClearKey(config) {
             kid = btoa(kid.match(/\w{2}/g).map((a) => {
                 return String.fromCharCode(parseInt(a, 16));
             }).join(''));
-            return kid.replace(/=/g, '');
+            return kid.replace(/=/g, '').replace(/\+/g, '-').replace(/\//, '_');
         } catch (e) {
             return null;
         }
